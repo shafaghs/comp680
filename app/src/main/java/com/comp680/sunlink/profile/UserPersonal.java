@@ -17,18 +17,18 @@ public class UserPersonal implements Serializable{
     private String geopref = " ";
     private String workAuth = " ";
 
-    UserPersonal() {}
+    public UserPersonal() {}
 
     void setUserID(String newID) {
         this.userID = newID;
     }
 
-    void setFirstName(String newFirstName) {
+    public void setFirstName(String newFirstName) {
         if(!newFirstName.isEmpty())
             this.firstName=newFirstName;
     }
 
-    void setLastName(String newLastName) {
+    public void setLastName(String newLastName) {
         if(!newLastName.isEmpty())
             this.lastName=newLastName;
     }

@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.comp680.sunlink.profile.UserPersonal;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -214,10 +216,14 @@ class BgTask extends AsyncTask<String, Void, String> {
         }
         intent = new Intent(ctx, HomePage.class);
         intent.putExtra("EmailAddress", userEmail);
+        intent.putExtra("NewUser","Yes");
         editor.putString(EMAILCON, userEmail);
         editor.putString(FIRSTNAMECON, firstName);
         editor.putString(FAMILYNAMECON, familyName);
         editor.apply();
+        UserPersonal up = new UserPersonal();
+        up.setFirstName(firstName);
+        up.setLastName(familyName);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         ctx.startActivity(intent);
     }

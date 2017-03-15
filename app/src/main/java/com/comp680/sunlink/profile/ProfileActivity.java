@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.comp680.sunlink.R;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.Target;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -69,6 +72,14 @@ public class ProfileActivity extends AppCompatActivity {
                 }
 
         });
+
+        Target profile = new ViewTarget(R.id.personal_edit, this);
+        new ShowcaseView.Builder(this, false)
+                .setTarget(profile)
+                .setContentTitle("")
+                .setContentText("Please complete your profile using Edit button")
+                .setStyle(1)
+                .build();
 
         TextView editAcademic =(TextView)findViewById(R.id.academic_edit);
         editAcademic.setOnClickListener(new View.OnClickListener() {

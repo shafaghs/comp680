@@ -8,14 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.Target;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
+
 import com.comp680.sunlink.fragments.HomePageEventListingFragment;
 import com.comp680.sunlink.fragments.HomePageJobListingFragment;
 import com.comp680.sunlink.profile.ProfileActivity;
 
 public class HomePage extends AppCompatActivity {
+    private Intent currIntent;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
@@ -31,12 +36,28 @@ public class HomePage extends AppCompatActivity {
 
         ImageButton profileButton = (ImageButton) findViewById(R.id.profile_button);
 
+        currIntent = getIntent();
+
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                if (currIntent.hasExtra("NewUser")) {
+                    intent.putExtra("NewUser","NewUser");
+                }
                 startActivity(intent);
             }
         });
+
+
+        if (currIntent.hasExtra("NewUser")) {
+            Target profile = new ViewTarget(R.id.profile_button, this);
+            new ShowcaseView.Builder(this, false)
+                    .setTarget(profile)
+                    .setContentTitle("Hello")
+                    .setContentText("Please complete your profile information to start")
+                    .setStyle(1)
+                    .build();
+        }
     }
 }

@@ -25,6 +25,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.github.amlcurran.showcaseview:library:5.0.0'
     testCompile 'junit:junit:4.12'
     compile project(':circleimageview-1.2.1')
     compile project(':activation')

@@ -8,4 +8,10 @@
     <dimen name="very_small_text_size">11sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+    <!--show case -->
+    <dimen name="showcase_radius">50dp</dimen>
+    <dimen name="showcase_radius_inner">96dp</dimen>
+    <dimen name="showcase_radius_outer">128dp</dimen>
+
+    <dimen name="showcase_radius_material">50dp</dimen>
 </resources>
