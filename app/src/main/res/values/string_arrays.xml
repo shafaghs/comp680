@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="status">
+        <item></item>
+        <item>Seeking Employment</item>
+        <item>Not Seeking Employment</item>
+    </string-array>
+
+    <string-array name="states">
+        <item></item>
+        <item>All States</item>
+        <item>Alabama</item>
+        <item>Alaska </item>
+        <item>Arizona</item>
+        <item>Arkansas</item>
+        <item>California </item>
+        <item>Colorado </item>
+        <item>Connecticut </item>
+        <item>Delaware </item>
+        <item>Florida </item>
+        <item>Georgia </item>
+        <item>California </item>
+        <item>Hawaii</item>
+    </string-array>
+
+    <string-array name="work_auth_array">
+        <item></item>
+        <item>US Citizen</item>
+        <item>1-766 (Dream Act)</item>
+        <item>Permanent Resident</item>
+        <item>F-1 (student visa)</item>
+        <item>H-1 Visa</item>
+    </string-array>
+
+    <string-array name="applicant_type">
+        <item></item>
+        <item>Undergraduate</item>
+        <item>Graduating Senior</item>
+        <item>Alumni</item>
+        <item>Graduate Student</item>
+        <item>H-1 Visa</item>
+    </string-array>
+
+    <string-array name="degree_level">
+        <item></item>
+        <item>Undergraduate Student</item>
+        <item>Bachelor of Arts</item>
+        <item>Bachelor of Science</item>
+        <item>MS - Master of Science</item>
+        <item>MBA - Master of Business Administration</item>
+        <item>MFA - Master of Fine Arts</item>
+        <item>MSA - Master of Science in Accountancy</item>
+        <item>MST - Master of Science in Taxation</item>
+        <item>PhD</item>
+    </string-array>
+
+
+
+</resources>

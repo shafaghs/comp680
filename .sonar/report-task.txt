@@ -1,0 +1,5 @@
+projectKey=Comp680Project
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/Comp680Project
+ceTaskId=AVrRIRH0Yxj98uiwgzg8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVrRIRH0Yxj98uiwgzg8

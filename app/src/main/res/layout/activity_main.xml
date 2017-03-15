@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_image"
+    tools:context="com.comp680.sunlink.StartActivity"
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    android:alpha="0.7"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+        <Button
+            android:id="@+id/main_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logIn"
+            android:textAllCaps="false"
+            style="@style/ButtonStyleFillIn"/>
+
+        <Button
+            android:id="@+id/main_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_login"
+            android:text="@string/signUp"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            style="@style/ButtonStyleFillIn"
+            android:layout_marginBottom="50dp"/>
+</RelativeLayout>

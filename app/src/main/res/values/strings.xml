@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Sunlink</string>
+    <string name="logIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="login_username">Enter your CSUN email address like example@my.csun.edu  and password to sign in </string>
+    <string name="login_email">example@my.csun.edu</string>
+    <string name="login_password">Password</string>
+    <string name="login_confirm_password">Confirm Password</string>
+    <string name="login_linkin">Sign in with linkedIn account</string>
+    <string name="login_facebook">Sign in with Facebook account</string>
+    <string name="sign_up_username">Please enter your CSUN email address (like example@my.csun.edu)</string>
+    <string name="signup_linkin">Sign up with linkin account</string>
+    <string name="signup_facebook">Sign up with Facebook account</string>
+    <string name="change_password">Enter your new password.New password should be at least 6 characters.</string>
+    <string name="or">OR</string>
+    <string name="invalid_userPass">Username or Password is incorrect, try again.</string>
+    <string name="Both_filled">Both fields should be filled</string>
+    <string name="same_value">Password and Confirm Password should contain same value.</string>
+    <string name="save">Save to Favorite</string>
+    <string name="apply">Apply on Company Site</string>
+    <string name="job_description_title">Job Description</string>
+    <string name="job_duties">Job Duties</string>
+    <string name="essential_skills">Essential Skills</string>
+    <string name="desired_skills">Desired Skills</string>
+
+    <string name="profile_hp">Profile</string>
+    <string name="search_hp">Search</string>
+    <string name="my_career_center_hp">My Career Center</string>
+    <string name="resources_hp">Resources</string>
+    <string name="settings_hp">Settings</string>
+    <string name="spinner_jobs">More</string>
+    <string name="home_page">Home</string>
+
+    <!-- Job menu -->
+    <string name="title_A">All</string>
+    <string name="title_MR">Major Related</string>
+    <string name="title_FT">Full Time</string>
+    <string name="title_PT">Part Time</string>
+    <string name="title_I">Internships</string>
+    <string name="title_At">Attending</string>
+    <string name="search_by_jobtitle">Search by job title</string>
+
+    <!-- Menu Drawer -->
+    <string name="openDrawer">Open drawer</string>
+    <string name="closeDrawer">CloseDrawer</string>
+    <string name="empty_email_error_message">You should fill email address</string>
+    <string name="empty_password_error_message">You should fill password</string>
+    <string name="email_format_error">Your email format is not correct, it should be abc@my.csun.edu</string>
+    <string name="password_incorrect_error">Password is not correct, try again</string>
+    <string name="redundant_email">This email address is already registered. Make sure you type it correctly.</string>
+    <string name="password_length">New password should be at least 6 characters</string>
+    <string name="fill_email_field">You should fill email address</string>
+    <string name="fill_pass_field">You should fill password</string>
+    <string name="unsave_job">UnSave</string>
+    <string name="save_job">Save to Favorite</string>
+    <string name="company_logo">Company Logo</string>
+    <string name="title_activity_search_start_tab">SearchStartTab</string>
+    <string name="un_save">Unsave</string>
+    <string name="save_to_favorit">Save to Favorite</string>
+    <string name="title_activity_search_start1">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="continue_string">Continue</string>
+
+
+    <string name="family_name">* Family name</string>
+    <string name="fill_below">To continue fill below fields. All fields with * should be filled. </string>
+    <string name="mandatory_field">Fields with * should be filled.</string>
+    <string name="sign_up_url">http://192.168.0.6/CsunSunlink/signUp.php</string>
+    <string name="login_url">http://192.168.0.6/CsunSunlink/login.php</string>
+    <string name="register_url">http://192.168.0.6/CsunSunlink/register.php</string>
+    <string name="job_search_url">http://192.168.0.6/CsunSunlink/jobListing.php</string>
+    <string name="event_listing_url">http://192.168.0.6/CsunSunlink/eventListing.php</string>
+    <string name="save_to_favorite">Save to Favorite</string>
+    <string name="unsave">Unsave</string>
+    <string name="academic">Academic</string>
+    <string name="edit">edit</string>
+    <string name="edit_academic_profile">http://192.168.0.6/CsunSunlink/editAcademicFragment.php</string>
+    <string name="edit_professional_profile">http://192.168.0.6/CsunSunlink/editProfessional.php</string>
+    <string name="edit_personal_profile">http://192.168.0.6/CsunSunlink/editPersonalFragment.php</string>
+    <string name="personal_frag_url">http://10.0.2.2/CsunSunlink/personalFragment.php</string>
+    <string name="academic_frag_url">http://10.0.2.2/CsunSunlink/academicFragment.php</string>
+    <string name="professional_frag_url">http://10.0.2.2/CsunSunlink/professionalFragment.php</string>
+    <string name="search_detail_url">http://10.0.2.2/CsunSunlink/searchDetail.php</string>
+    <string name="search_url">http://10.0.2.2/CsunSunlink/search.php</string>
+    <string name="save_job_url">http://10.0.2.2/CsunSunlink/savedJob.php</string>
+    <string name="personal_statement">Personal Statement</string>
+    <string name="experience">Experience</string>
+    <string name="skills">Skills</string>
+    <string name="projects">Projects</string>
+    <string name="save_button">Save</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="status">Status</string>
+    <string name="work_authorizarion">Work Authorizarion</string>
+    <string name="geographical_preference">Geographical Preference</string>
+
+</resources>
