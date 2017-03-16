@@ -73,13 +73,13 @@ public class ProfileActivity extends AppCompatActivity {
 
         });
 
-        Target profile = new ViewTarget(R.id.personal_edit, this);
+       /* Target profile = new ViewTarget(R.id.personal_edit, this);
         new ShowcaseView.Builder(this, false)
                 .setTarget(profile)
                 .setContentTitle("")
                 .setContentText("Please complete your profile using Edit button")
                 .setStyle(1)
-                .build();
+                .build();*/
 
         TextView editAcademic =(TextView)findViewById(R.id.academic_edit);
         editAcademic.setOnClickListener(new View.OnClickListener() {
