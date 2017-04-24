@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.comp680.sunlink.search.SearchStart;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
@@ -35,8 +36,20 @@ public class HomePage extends AppCompatActivity {
         transaction.commit();
 
         ImageButton profileButton = (ImageButton) findViewById(R.id.profile_button);
+        ImageButton searchButton = (ImageButton) findViewById(R.id.search_button);
 
         currIntent = getIntent();
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SearchStart.class);
+                if (currIntent.hasExtra("NewUser")) {
+                    intent.putExtra("NewUser","NewUser");
+                }
+                startActivity(intent);
+            }
+        });
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override

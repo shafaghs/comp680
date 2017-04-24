@@ -1,5 +1,5 @@
-projectKey=myProject
+projectKey=anotherAndroidProject
 serverUrl=http://localhost:9000
-dashboardUrl=http://localhost:9000/dashboard/index/myProject
-ceTaskId=AVrUiH3kwNkAYUC16kts
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AVrUiH3kwNkAYUC16kts
+dashboardUrl=http://localhost:9000/dashboard/index/anotherAndroidProject
+ceTaskId=AVuDCAwsF1Rkrdgj3EAn
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVuDCAwsF1Rkrdgj3EAn
