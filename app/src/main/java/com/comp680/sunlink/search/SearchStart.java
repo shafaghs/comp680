@@ -7,9 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.comp680.sunlink.R;
 import static android.graphics.Color.BLUE;
@@ -27,6 +25,9 @@ public class SearchStart extends AppCompatActivity {
     private SharedPreferences pref;
     private static final String SEARCH_KEY = "searchKey";
     private static final String SEARCH_JOB = "searchJob";
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private PagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +46,17 @@ public class SearchStart extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Result"));
         tabLayout.addTab(tabLayout.newTab().setText("Saved Jobs"));
+        tabLayout.addTab(tabLayout.newTab().setText("Latest Keywords"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setSelectedTabIndicatorHeight(10);
         tabLayout.setTabTextColors(BLUE,WHITE);
 
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter(
-                getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         if(viewPager.getCurrentItem()==0 && !"".equals(searchKey)){
             method = SEARCH_JOB;
@@ -77,6 +78,11 @@ public class SearchStart extends AppCompatActivity {
                 }
                 if(tab.getPosition()==1){
                     method = "showSavedJob";
+                    SearchStartBgTask bgTask = new SearchStartBgTask(ctx, rootView);
+                    bgTask.execute(method, userId);
+                }
+                if(tab.getPosition()==2){
+                    method = "showLatestKeywords";
                     SearchStartBgTask bgTask = new SearchStartBgTask(ctx, rootView);
                     bgTask.execute(method, userId);
                 }
@@ -120,7 +126,6 @@ public class SearchStart extends AppCompatActivity {
         super.onResume();
         searchKey = pref.getString(SEARCH_KEY,"");
         if(!"".equals(searchKey) && !"".equals(userId)){
-            Log.w("onresume",searchKey);
             method = SEARCH_JOB;
             SearchStartBgTask bgTask = new SearchStartBgTask(ctx, rootView);
             bgTask.execute(method, searchKey);
@@ -130,7 +135,6 @@ public class SearchStart extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.w("onrestart",searchKey);
         searchKey = pref.getString(SEARCH_KEY,"");
         if(!searchKey.isEmpty() && !"".equals(searchKey)){
             method = SEARCH_JOB;
@@ -142,7 +146,6 @@ public class SearchStart extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.w("onstart",searchKey);
         searchKey = pref.getString(SEARCH_KEY,"");
         if (!searchKey.isEmpty() && !"".equals(searchKey)){
             method = SEARCH_JOB;
