@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import com.comp680.sunlink.fragments.TabFragment1;
 import com.comp680.sunlink.fragments.TabFragment2;
+import com.comp680.sunlink.fragments.TabFragment3;
 
 class PagerAdapter extends FragmentStatePagerAdapter {
     private int mNumOfTabs;
@@ -21,6 +22,8 @@ class PagerAdapter extends FragmentStatePagerAdapter {
                return new TabFragment1();
             case 1:
                return new TabFragment2();
+            case 2:
+                return new TabFragment3();
             default:
                return null;
         }
