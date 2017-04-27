@@ -18,7 +18,6 @@ public class ItemAdapter extends ArrayAdapter {
 
     public ItemAdapter(Context context, int resource) {
         super(context, resource);
-
     }
 
     public void add(ItemInfo object) {

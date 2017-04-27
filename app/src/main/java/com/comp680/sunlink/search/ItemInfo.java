@@ -4,8 +4,16 @@ import android.graphics.Bitmap;
 
 public class ItemInfo {
 
-    private String jobTitle,jobDuties,jobSummary,essentialSkills,postedDate,companyName,
-            companyAddress,jobId,companyId,companyUrl;
+    private String jobTitle;
+    private String jobDuties;
+    private String jobSummary;
+    private String essentialSkills;
+    private String postedDate;
+    private String companyName;
+    private String companyAddress;
+    private String jobId;
+    private String companyId;
+    private String companyUrl;
     private Bitmap companyLogo;
 
     public ItemInfo(String mJobId, String mJobTitle, String mCompanyName, String mPostedDate,
