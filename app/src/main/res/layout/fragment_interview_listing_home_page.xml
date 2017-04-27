@@ -6,7 +6,7 @@
     android:weightSum="2">
 
     <ListView
-        android:id="@+id/job_listing_fragment"
+        android:id="@+id/interview_listing_fragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"

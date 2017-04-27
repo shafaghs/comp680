@@ -10,9 +10,9 @@ import com.comp680.sunlink.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventAdapter extends ArrayAdapter {
+class EventAdapter extends ArrayAdapter {
     List list = new ArrayList();
-    public EventAdapter(Context context, int resource) {
+    EventAdapter(Context context, int resource) {
         super(context, resource);
     }
 

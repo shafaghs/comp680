@@ -57,6 +57,12 @@ class FragmentBgTask extends AsyncTask<String, Void, String> {
                 } catch (IOException e) {
                     LOGGER.info(e);}
                 break;
+            case "interviewListing":
+                try {
+                    return interviewListing();
+                } catch (IOException e) {
+                    LOGGER.info(e);}
+                break;
             default:
                 break;
         }
@@ -108,6 +114,34 @@ class FragmentBgTask extends AsyncTask<String, Void, String> {
         return stringBuilder.toString().trim();
     }
 
+    private String interviewListing() throws IOException {
+        final String interviewUrl = ctx.getString(R.string.interview_listing_url);
+        URL url = new URL(interviewUrl);
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        //send request
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setDoOutput(true);
+        OutputStream outputStream = httpURLConnection.getOutputStream();
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, UTF8));
+        String data = URLEncoder.encode("interviewTitle", UTF8) + "=" + URLEncoder.encode(searchKey, UTF8);
+        bufferedWriter.write(data);
+        bufferedWriter.flush();
+        bufferedWriter.close();
+        outputStream.close();
+        //get result
+        InputStream inputStream = httpURLConnection.getInputStream();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        StringBuilder stringBuilder = new StringBuilder();
+        String result;
+        while ((result = bufferedReader.readLine()) != null) {
+            stringBuilder.append(result).append("\n");
+        }
+        bufferedReader.close();
+        inputStream.close();
+        httpURLConnection.disconnect();
+        return stringBuilder.toString().trim();
+    }
+
 
     @Override
     protected void onPostExecute(String finalResult) {
@@ -129,6 +163,9 @@ class FragmentBgTask extends AsyncTask<String, Void, String> {
                 break;
             case "eventListing":
                 eventListingOutput(jsonArray);
+                break;
+            case "interviewListing":
+                interviewListingOutput(jsonArray);
                 break;
             default:
                 break;
@@ -207,6 +244,37 @@ class FragmentBgTask extends AsyncTask<String, Void, String> {
                 dateStart = jsonObjEventListing.getString("date_start").trim();
                 EventInfo eventI = new EventInfo(eventId, eventTitle, dateStart, eventInfo, eventLocation);
                 itemAdapter.add(eventI);
+                count++;
+            }
+        } catch (JSONException e) {
+            LOGGER.jsonInfo(e);
+        }
+    }
+
+    private void interviewListingOutput(JSONArray jsonArray){
+        JSONObject jsonObjInterviewListing;
+        try {
+            String interviewId;
+            String interviewTitle;
+            String interviewLocation;
+            String interviewDate;
+            String interviewTime;
+            String interviewInfo;
+            int count = 0;
+            InterviewAdapter itemAdapter;
+            itemAdapter = new InterviewAdapter(ctx, R.layout.row_layout);
+            listView.setAdapter(itemAdapter);
+            while (count < jsonArray.length()) {
+                jsonObjInterviewListing = jsonArray.getJSONObject(count);
+                interviewId = jsonObjInterviewListing.getString("interview_id");
+                interviewTitle = jsonObjInterviewListing.getString("interview_title");
+                interviewLocation = jsonObjInterviewListing.getString("interview_location");
+                interviewInfo = jsonObjInterviewListing.getString("interview_info");
+                interviewDate = jsonObjInterviewListing.getString("interview_date").trim();
+                interviewTime = jsonObjInterviewListing.getString("interview_time").trim();
+                InterviewInfo interviewInformation = new InterviewInfo(interviewId, interviewTitle, interviewDate,
+                                                 interviewInfo, interviewLocation, interviewTime);
+                itemAdapter.add(interviewInformation);
                 count++;
             }
         } catch (JSONException e) {

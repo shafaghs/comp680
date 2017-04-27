@@ -71,6 +71,7 @@
     <string name="register_url">http://10.0.2.2/CsunSunlink/register.php</string>
     <string name="job_search_url">http://10.0.2.2/CsunSunlink/jobListing.php</string>
     <string name="event_listing_url">http://10.0.2.2/CsunSunlink/eventListing.php</string>
+    <string name="interview_listing_url">http://10.0.2.2/CsunSunlink/interviewListing.php</string>
     <string name="save_to_favorite">Save to Favorite</string>
     <string name="unsave">Unsave</string>
     <string name="academic">Academic</string>

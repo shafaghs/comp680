@@ -72,101 +72,133 @@
             android:weightSum="5">
 
             <TextView
+                style="@style/homePageMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Profile"
-                style="@style/homePageMenu"
-                />
+                android:text="Profile" />
 
             <TextView
+                style="@style/homePageMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                style="@style/homePageMenu"
-                android:text="Search"
-                 />
+                android:text="Search" />
 
             <TextView
+                style="@style/homePageMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.1"
-                style="@style/homePageMenu"
-                android:textSize="12sp"
-                android:text="Career Center" />
+                android:text="Career Center"
+                android:textSize="12sp" />
 
             <TextView
+                style="@style/homePageMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="@dimen/small_text_size"
-                style="@style/homePageMenu"
-                android:text="Resources" />
+                android:text="Resources"
+                android:textSize="@dimen/small_text_size" />
 
             <TextView
+                style="@style/homePageMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/homePageMenu"
                 android:layout_weight=".93"
                 android:text="Setting" />
         </LinearLayout>
 
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@color/colorPrimary"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="100">
 
-            <Button
-                android:id="@+id/button"
-                style="@style/HomePageMenyBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="5"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical|center_horizontal|center"
-                android:text="Upcoming Events" />
-
-
-        </LinearLayout>
-
-        <FrameLayout
-            android:id="@+id/home_page_event_listing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:background="@color/white" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@color/colorPrimary"
-            android:orientation="horizontal">
-
-            <Button
-                style="@style/HomePageMenyBar"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="10"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical|center_horizontal|center"
-                android:text="Latest Job Posts" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
 
-        <FrameLayout
-            android:id="@+id/home_page_job_listing"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="bottom"
-            android:layout_weight="50"
-            android:background="@color/white" />
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/HomePageMenyBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="5"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center_vertical|center_horizontal|center"
+                        android:text="Upcoming Events" />
 
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/home_page_event_listing"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/HomePageMenyBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="10"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center_vertical|center_horizontal|center"
+                        android:text="Latest Job Posts" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/home_page_job_listing"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="50"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/HomePageMenyBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="10"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center_vertical|center_horizontal|center"
+                        android:text="Latest Job Interviews" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/home_page_job_interviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="50"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
-
 
 </android.support.v4.widget.DrawerLayout>

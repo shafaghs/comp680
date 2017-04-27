@@ -1,9 +1,9 @@
 package com.comp680.sunlink.fragments;
 
-public class EventInfo {
+class EventInfo {
     private String eventTitle,eventId,eventDate,eventLocation,eventInfo;
 
-    public EventInfo(String mEventId, String mEventTitle, String mEventDate, String mEventInfo, String mEventLocation) {
+    EventInfo(String mEventId, String mEventTitle, String mEventDate, String mEventInfo, String mEventLocation) {
         this.eventTitle = mEventTitle;
         this.eventId = mEventId;
         this.eventDate = mEventDate;

@@ -15,6 +15,8 @@ import com.github.amlcurran.showcaseview.targets.ViewTarget;
 
 import com.comp680.sunlink.fragments.HomePageEventListingFragment;
 import com.comp680.sunlink.fragments.HomePageJobListingFragment;
+import com.comp680.sunlink.fragments.HomePageInterviewListingFragment;
+
 import com.comp680.sunlink.profile.ProfileActivity;
 
 public class HomePage extends AppCompatActivity {
@@ -27,12 +29,14 @@ public class HomePage extends AppCompatActivity {
 
         HomePageJobListingFragment jobListing = new HomePageJobListingFragment();
         HomePageEventListingFragment eventListing = new HomePageEventListingFragment();
+        HomePageInterviewListingFragment interviewListing = new HomePageInterviewListingFragment();
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
 
         transaction.add(R.id.home_page_job_listing, jobListing, "Job Listing");
         transaction.add(R.id.home_page_event_listing, eventListing, "Event Listing");
+        transaction.add(R.id.home_page_job_interviews, interviewListing, "Interview Listing");
         transaction.commit();
 
         ImageButton profileButton = (ImageButton) findViewById(R.id.profile_button);
