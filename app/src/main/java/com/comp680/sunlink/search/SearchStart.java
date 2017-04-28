@@ -109,6 +109,7 @@ public class SearchStart extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
+                viewPager.setCurrentItem(0);
                 method = SEARCH_JOB;
                 searchKey = searchView.getQuery().toString();
                 SharedPreferences.Editor editor = pref.edit();
