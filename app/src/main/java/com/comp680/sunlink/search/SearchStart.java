@@ -103,6 +103,7 @@ public class SearchStart extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
+                viewPager.setCurrentItem(0);
                 method = SEARCH_JOB;
                 searchKey = searchView.getQuery().toString();
                 SharedPreferences.Editor editor = pref.edit();
@@ -120,7 +121,6 @@ public class SearchStart extends AppCompatActivity {
         super.onResume();
         searchKey = pref.getString(SEARCH_KEY,"");
         if(!"".equals(searchKey) && !"".equals(userId)){
-            Log.w("onresume",searchKey);
             method = SEARCH_JOB;
             SearchStartBgTask bgTask = new SearchStartBgTask(ctx, rootView);
             bgTask.execute(method, searchKey);
@@ -130,7 +130,6 @@ public class SearchStart extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.w("onrestart",searchKey);
         searchKey = pref.getString(SEARCH_KEY,"");
         if(!searchKey.isEmpty() && !"".equals(searchKey)){
             method = SEARCH_JOB;
@@ -142,7 +141,6 @@ public class SearchStart extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.w("onstart",searchKey);
         searchKey = pref.getString(SEARCH_KEY,"");
         if (!searchKey.isEmpty() && !"".equals(searchKey)){
             method = SEARCH_JOB;
